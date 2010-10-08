@@ -11,10 +11,10 @@ vector<size_t> sieve(size_t max_prime)
   vector<bool> is_prime(max_prime+1, true);
   is_prime[0] = is_prime[1] = false;
 
-  for (size_t i = 2; i < max_prime; i++) {
+  for (size_t i = 2; i <= max_prime; i++) {
     if (is_prime[i]) {
       primes.push_back(i);
-      for (size_t j = i+i; j < max_prime; j += i) {
+      for (size_t j = i+i; j <= max_prime; j += i) {
         is_prime[j] = false;
       }
     }
